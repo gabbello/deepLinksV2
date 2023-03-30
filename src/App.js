@@ -18,6 +18,7 @@ function App() {
   }, []);
 
   const handleClick = () => {
+    console.log("Button clicked");
     if (email) {
       const encodedEmail = encodeURIComponent(email);
       const linkUrl = `https://www.google.com/search?q=${encodedEmail}`;
@@ -27,7 +28,9 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={handleClick}>Search Google</button>
+      {email && (
+        <button onClick={handleClick}>Search Google</button>
+      )}
     </div>
   );
 }
