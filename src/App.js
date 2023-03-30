@@ -32,7 +32,7 @@ function App() {
   return (
     <div className="App">
       {email && (
-        <button onClick={handleClick} style={{ paddingTop: '20px' }}>Search email in AB BO</button>
+        <button onClick={handleClick} style={{ marginTop: '20px' }}>Search email in AB BO</button>
       )}
     </div>
   );
