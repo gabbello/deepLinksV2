@@ -32,11 +32,7 @@ function App() {
   return (
     <div className="App" style={{ marginTop: "20px" }}>
       {email && (
-        <>
-        <button onClick={handleClick} style={{ marginLeft: "10px" }}>Search email in AB BO</button>
-        <br />
-        <iframe src="https://backend.arcanebet.com/dashboard" title="AB BO Dashboard" style={{ width: "100%", height: "500px", marginTop: "20px" }}></iframe>
-      </>
+         <button onClick={handleClick} style={{ marginLeft: "10px" }}>Search email in AB BO</button>
       )}
     </div>
   );
