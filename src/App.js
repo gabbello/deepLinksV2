@@ -24,7 +24,7 @@ function App() {
     console.log("Button clicked");
     if (email) {
       const encodedEmail = encodeURIComponent(email);
-      const linkUrl = `https://www.google.com/search?q=${encodedEmail}`;
+      const linkUrl = `https://backend.arcanebet.com/customers?page=1&customers[email_cont]=${encodedEmail}`;
       window.open(linkUrl, "_blank");
     }
   };
