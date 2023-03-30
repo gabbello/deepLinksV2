@@ -8,15 +8,18 @@ function App() {
     createDetailsWidget({ timeout: 50000 }).then(widget => {
       // set the initial email
       const profile = widget.getCustomerProfile();
-      setEmail(profile.email);
-
+      if (profile && profile.email) {
+        setEmail(profile.email);
+      }
+  
       // listen for the customer_profile event and update the email
       widget.on("customer_profile", profile => {
-        setEmail(profile.email);
+        if (profile && profile.email) {
+          setEmail(profile.email);
+        }
       });
     });
-  }, []);
-
+  }, []); 
   const handleClick = () => {
     console.log("Button clicked");
     if (email) {
