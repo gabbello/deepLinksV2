@@ -5,7 +5,7 @@ function App() {
   const [email, setEmail] = useState(null);
 
   useEffect(() => {
-    createDetailsWidget({ timeout: 15cam 000 }).then(widget => {
+    createDetailsWidget({ timeout: 15000 }).then(widget => {
       // set the initial email
       const profile = widget.getCustomerProfile();
       if (profile && profile.email) {
