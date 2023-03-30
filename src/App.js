@@ -5,7 +5,7 @@ function App() {
   const [email, setEmail] = useState(null);
 
   useEffect(() => {
-    createDetailsWidget({ timeout: 50000 }).then(widget => {
+    createDetailsWidget({ timeout: 30000 }).then(widget => {
       // set the initial email
       const profile = widget.getCustomerProfile();
       if (profile && profile.email) {
@@ -32,7 +32,7 @@ function App() {
   return (
     <div className="App">
       {email && (
-        <button onClick={handleClick}>Search Google</button>
+        <button onClick={handleClick} style={{ paddingTop: '20px' }}>Search email in AB BO</button>
       )}
     </div>
   );
