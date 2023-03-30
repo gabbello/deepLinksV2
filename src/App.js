@@ -3,7 +3,6 @@ import { createDetailsWidget } from "@livechat/agent-app-sdk";
 
 function App() {
   const [email, setEmail] = useState(null);
-  const [encodedEmail, setEncodedEmail] = useState(null);
 
   useEffect(() => {
     createDetailsWidget({ timeout: 15000 }).then(widget => {
@@ -11,22 +10,20 @@ function App() {
       const profile = widget.getCustomerProfile();
       if (profile && profile.email) {
         setEmail(profile.email);
-        setEncodedEmail(encodeURIComponent(profile.email));
       }
   
       // listen for the customer_profile event and update the email
       widget.on("customer_profile", profile => {
         if (profile && profile.email) {
           setEmail(profile.email);
-          setEncodedEmail(encodeURIComponent(profile.email));
         }
       });
     });
   }, []); 
-
   const handleClick = () => {
     console.log("Button clicked");
     if (email) {
+      const encodedEmail = encodeURIComponent(email);
       const linkUrl = `https://backend.arcanebet.com/customers?page=1&customers[email_cont]=${encodedEmail}`;
       window.open(linkUrl, "_blank");
     }
@@ -35,16 +32,7 @@ function App() {
   return (
     <div className="App" style={{ marginTop: "20px" }}>
       {email && (
-        <>
-          <button onClick={handleClick} style={{ marginLeft: "10px" }}>
-            Search email in AB BO
-          </button>
-          <br />
-          <iframe
-            src={`https://metabase.arcanebet.com/question/252?email=${encodedEmail}`}
-            style={{ marginTop: "20px" }}
-          />
-        </>
+         <button onClick={handleClick} style={{ marginLeft: "10px" }}>Search email in AB BO</button>
       )}
     </div>
   );
