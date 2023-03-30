@@ -32,7 +32,16 @@ function App() {
   return (
     <div className="App" style={{ marginTop: "20px" }}>
       {email && (
-         <button onClick={handleClick} style={{ marginLeft: "10px" }}>Search email in AB BO</button>
+        <>
+        <button onClick={handleClick} style={{ marginLeft: "10px" }}>Search email in AB BO</button>
+        <br />
+        <iframe
+            src={`https://metabase.arcanebet.com/question/252?email=${encodedEmail}`}
+            title="Metabase Dashboard"
+            width="100%"
+            height="800px"
+          ></iframe>
+      </>
       )}
     </div>
   );
