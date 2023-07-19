@@ -41,8 +41,10 @@ function App() {
   return (
     <div className="App" style={{ marginTop: "20px" }}>
       {email && (
-         <button onClick={handleABClick} style={{ marginLeft: "10px", marginRight: "10px" }}>Search email in ArcaneBet BackOffice</button>
-         <button onClick={handleCVClick} style={{ marginLeft: "10px", marginRight: "10px" }}>Search email in CasinoVibes BackOffice</button>
+        <>
+          <button onClick={handleArcaneBetClick} style={{ marginLeft: "10px", marginRight: "10px" }}>Search email in ArcaneBet BackOffice</button>
+          <button onClick={handleCasinoVibesClick} style={{ marginLeft: "10px", marginRight: "10px" }}>Search email in CasinoVibes BackOffice</button>
+        </>
       )}
     </div>
   );
