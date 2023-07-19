@@ -20,7 +20,7 @@ function App() {
       });
     });
   }, []); 
-  const handleClick = () => {
+  const handleABClick = () => {
     console.log("Button clicked");
     if (email) {
       const encodedEmail = encodeURIComponent(email);
@@ -29,10 +29,20 @@ function App() {
     }
   };
 
+  const handleCVClick = () => {
+    console.log("CasinoVibes Button clicked");
+    if (email) {
+      const encodedEmail = encodeURIComponent(email);
+      const linkUrl = `https://backend.casinovibes.com/customers?page=1&customers[email_cont]=${encodedEmail}`;
+      window.open(linkUrl, "_blank");
+    }
+  };
+
   return (
     <div className="App" style={{ marginTop: "20px" }}>
       {email && (
-         <button onClick={handleClick} style={{ marginLeft: "10px" }}>Search email in ArcaneBet BackOffice</button>
+         <button onClick={handleABClick} style={{ marginLeft: "10px", marginRight: "10px" }}>Search email in ArcaneBet BackOffice</button>
+         <button onClick={handleCVClick} style={{ marginLeft: "10px", marginRight: "10px" }}>Search email in CasinoVibes BackOffice</button>
       )}
     </div>
   );
