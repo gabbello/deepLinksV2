@@ -10,7 +10,7 @@ Basically it adds this button:
 
 This app is hosted in Arcanebet's AWS stage account (139952088230) using AWS Amplify.
 Any push to the main branch will trigger a redeploy of the app.
-App can be accesssed here: https://main.d1f69oqgei212y.amplifyapp.com/ (but it will show nothing if not accessed as iframe inside livechat.com BO)
+App can be accesssed here: https://main.d1rep20ygxxjw4.amplifyapp.com/ (but it will show nothing if not accessed as iframe inside livechat.com BO)
 
 The app is configured in [livechat console](https://developers.livechat.com/console/apps) using AB corporate account.
 
