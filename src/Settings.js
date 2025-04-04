@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { createSettingsWidget } from "@livechat/agent-app-sdk";
+import { createFullscreenWidget } from "@livechat/agent-app-sdk";
 
 function Settings() {
   const [urls, setUrls] = useState([]);
 
   useEffect(() => {
-    createSettingsWidget().then(widget => {
+    createFullscreenWidget().then(widget => {
       // Load initial settings from local storage or backend
       const savedUrls = JSON.parse(localStorage.getItem("customUrls")) || [];
       setUrls(savedUrls);
