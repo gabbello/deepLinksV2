@@ -1,0 +1,28 @@
+{
+    "id": "PvL0aZ0NR",
+    "name": "Deep Links v2",
+    "product": "livechat",
+    "blocks": {
+        "authorization": {
+            "clientId": "5005f99b3dca38d53d49421541b0500d",
+            "type": "javascript_app",
+            "redirectUri": "https://deep-links-r7a1-git-main-gabbellos-projects.vercel.app"
+        },
+        "repository": {
+            "provider": "github",
+            "name": "gabbello/deepLinksV2",
+            "branch": "main"
+        },
+        "deployment": {
+            "provider": "vercel",
+            "url": "https://deep-links-r7a1-git-main-gabbellos-projects.vercel.app"
+        },
+        "widgets": {
+            "xSONUuWBND": {
+                "url": "https://deep-links-sandy.vercel.app/",
+                "placement": "plugin",
+                "initialState": ""
+            }
+        }
+    }
+}
