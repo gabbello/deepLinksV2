@@ -1,0 +1,16 @@
+{
+  "urls": [
+    {
+      "name": "ArcaneBet",
+      "urlFormat": "https://backend.arcanebet.com/customers?page=1&customers[email_cont]={email}"
+    },
+    {
+      "name": "CasinoVibes",
+      "urlFormat": "https://backend.casinovibes.com/customers?page=1&customers[email_cont]={email}"
+    },
+    {
+      "name": "NuggetSlots",
+      "urlFormat": "https://backend.nuggetslots.com/customers?page=1&customers[email_cont]={email}"
+    }
+  ]
+}

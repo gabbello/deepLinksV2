@@ -3,8 +3,13 @@ import { createDetailsWidget } from "@livechat/agent-app-sdk";
 
 function App() {
   const [email, setEmail] = useState(null);
+  const [urls, setUrls] = useState([]);
 
   useEffect(() => {
+    // Load user-defined URLs from local storage
+    const savedUrls = JSON.parse(localStorage.getItem("customUrls")) || [];
+    setUrls(savedUrls);
+
     createDetailsWidget().then(widget => {
       // set the initial email
       const profile = widget.getCustomerProfile();
@@ -20,38 +25,27 @@ function App() {
       });
     });
   }, []); 
-  const handleABClick = () => {
-    if (email) {
-      const encodedEmail = encodeURIComponent(email);
-      const linkUrl = `https://backend.arcanebet.com/customers?page=1&customers[email_cont]=${encodedEmail}`;
-      window.open(linkUrl, "_blank");
-    }
-  };
 
-  const handleCVClick = () => {
+  const handleButtonClick = (urlFormat) => {
     if (email) {
       const encodedEmail = encodeURIComponent(email);
-      const linkUrl = `https://backend.casinovibes.com/customers?page=1&customers[email_cont]=${encodedEmail}`;
+      const linkUrl = urlFormat.replace("{email}", encodedEmail);
       window.open(linkUrl, "_blank");
     }
   };
-  
-  const handleNSClick = () => {
-    if (email) {
-      const encodedEmail = encodeURIComponent(email);
-      const linkUrl = `https://backend.nuggetslots.com/customers?page=1&customers[email_cont]=${encodedEmail}`;
-      window.open(linkUrl, "_blank");
-    }
-  };  
 
   return (
     <div className="App" style={{ marginTop: "20px" }}>
       {email && (
-        <>
-          <button onClick={handleABClick} style={{ marginLeft: "10px", marginRight: "10px" }}>Search email in ArcaneBet BackOffice!</button>
-          <button onClick={handleCVClick} style={{ marginLeft: "10px", marginRight: "10px", marginTop: "20px"  }}>Search email in CasinoVibes BackOffice!</button>
-          <button onClick={handleNSClick} style={{ marginLeft: "10px", marginRight: "10px", marginTop: "20px"  }}>Search email in NuggetSlots BackOffice!</button>
-        </>
+        urls.map((entry, index) => (
+          <button 
+            key={index} 
+            onClick={() => handleButtonClick(entry.urlFormat)} 
+            style={{ marginLeft: "10px", marginRight: "10px", marginTop: "20px" }}
+          >
+            Search email in {entry.name} BackOffice!
+          </button>
+        ))
       )}
     </div>
   );
