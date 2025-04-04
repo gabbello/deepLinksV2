@@ -1,3 +1,16 @@
 {
-    "id": "PvL0aZ0NR"
+    "id": "PvL0aZ0NR",
+    "name": "Deep Links v2",
+    "product": "livechat",
+    "blocks": {
+        "repository": {
+            "provider": "github",
+            "name": "gabbello/deepLinksV2",
+            "branch": "main"
+        },
+        "deployment": {
+            "provider": "vercel",
+            "url": "https://deep-links-r7a1-git-main-gabbellos-projects.vercel.app"
+        }
+    }
 }
